@@ -26,3 +26,18 @@ export function caesarCipher(str, shift) {
 
   return mapped.join('');
 }
+
+export function analyzeArray(arr) {
+  let sum = 0,
+    min = Infinity,
+    max = -Infinity,
+    length = arr.length;
+
+  arr.forEach((num) => {
+    sum += num;
+    min = Math.min(min, num);
+    max = Math.max(max, num);
+  });
+
+  return { average: sum / length, min, max, length };
+}
